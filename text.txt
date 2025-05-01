@@ -1,0 +1,64 @@
+# Customer Churn Prediction
+
+This project trains a machine learning model to predict customer churn based on various customer attributes and service usage patterns.
+
+## Features
+- Data preprocessing for numerical and categorical features
+- Feature scaling using MinMaxScaler
+- One-hot encoding for categorical variables
+- Model training and evaluation
+- Visualization of churn patterns
+- Function to predict churn probability from user input
+
+## Installation
+Clone the repository and install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+Example input for making predictions:
+```python
+new_input = {
+    'gender': 'Male',
+    'SeniorCitizen': 0,
+    'Partner': 'No',
+    'Dependents': 'No',
+    'tenure': 34,
+    'PhoneService': 'Yes',
+    'MultipleLines': 'No',
+    'InternetService': 'DSL',
+    'OnlineSecurity': 'Yes',
+    'OnlineBackup': 'No',
+    'DeviceProtection': 'Yes',
+    'TechSupport': 'No',
+    'StreamingTV': 'No',
+    'StreamingMovies': 'No',
+    'Contract': 'One year',
+    'PaperlessBilling': 'No',
+    'PaymentMethod': 'Mailed check',
+    'MonthlyCharges': 56.95,
+    'TotalCharges': 1889.50
+}
+predict_input(new_input)
+```
+
+## Model Output
+The model returns a tuple:
+- `0` or `1` (Indicating No Churn or Churn)
+- Probability Score
+
+If `0`, return **False** (No Churn); otherwise, return **True** (Churn).
+
+## Data Visualization
+Below is an example pie chart showing the churn distribution:
+```python
+import matplotlib.pyplot as plt
+df['Churn'].value_counts().plot.pie(autopct='%1.1f%%', startangle=90, colors=['lightblue', 'salmon'])
+plt.title('Customer Churn Distribution')
+plt.ylabel('')
+plt.show()
+```
+
+## Image
+![Churn Prediction](path/to/your/image.png)
